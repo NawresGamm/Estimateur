@@ -2,10 +2,7 @@
 #include <vector>
 #include <cmath>
 using namespace std;
-
-// =============================
 // Estimateur Nadaraya-Watson
-// =============================
 template<typename Kernel>
 double mhat_NW0_fast(
     double x,
@@ -28,16 +25,15 @@ double mhat_NW0_fast(
     return (Den == 0.0) ? 0.0 : (Num / Den);
 }
 
-// =============================
+
 // Noyau gaussien
-// =============================
+
 double gaussian_kernel(double u) {
     return exp(-0.5 * u * u) / sqrt(2 * M_PI);
 }
 
-// =============================
-// Exemple d'utilisation
-// =============================
+// la fonction main pour tester avec des donnees 
+
 int main() {
     vector<double> X = {1, 2, 3, 4, 5};
     vector<double> Y = {2, 4, 6, 8, 10};
